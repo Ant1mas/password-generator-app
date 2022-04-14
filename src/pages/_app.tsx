@@ -4,6 +4,7 @@ import { AppProps } from 'next/app'
 
 import '../../i18n'
 import 'styles/globals.css'
+import CustomSnackbarProvider from 'lib/plugins/notistack/CustomSnackbarProvider'
 
 export function App(props: AppProps) {
   const { Component, pageProps } = props
@@ -12,7 +13,9 @@ export function App(props: AppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Component {...pageProps} />
+      <CustomSnackbarProvider>
+        <Component {...pageProps} />
+      </CustomSnackbarProvider>
     </>
   )
 }
