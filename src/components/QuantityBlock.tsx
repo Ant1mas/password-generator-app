@@ -1,11 +1,13 @@
 import React from 'react'
 
-type Props = {
-  value: number
-  setValue?: Function
-}
+import { GeneratorContext } from 'lib/context/generatorContext'
+import { MIN_LENGTH, MAX_LENGTH } from 'lib/hooks/usePasswordSettings'
 
-export default function QuantityBlock({value, setValue}: Props) {
+type Props = {}
+
+export default function QuantityBlock({}: Props) {
+  const { passwordLength, setPasswordLength } = React.useContext(GeneratorContext)
+
   return (
     <div className='flex flex-wrap items-center justify-center'>
       <input
@@ -14,13 +16,13 @@ export default function QuantityBlock({value, setValue}: Props) {
         min="6"
         max="128"
         step="1"
-        value={value}
-        onChange={(e)=>{setValue(Number(e.target.value))}}
+        value={passwordLength}
+        onChange={(e)=>{setPasswordLength(Number(e.target.value))}}
       />
       <div className='inline-flex items-center justify-center mt-4 ml-5 md:mt-0 '>
         <button
           className='py-2 px-3 text-2xl font-light border border-neutral-200 z-10 border-r-0 h-[58px] rounded-l duration-200 text-neutral-500 hover:bg-primary/5 hover:border-primary/40 focus:outline-primary'
-          onClick={()=>{setValue(value - 1)}}
+          onClick={()=>{passwordLength > MIN_LENGTH && setPasswordLength(passwordLength - 1)}}
         >
           -
         </button>
@@ -29,12 +31,16 @@ export default function QuantityBlock({value, setValue}: Props) {
           type="number"
           min="6"
           max="128"
-          value={value}
-          onChange={(e)=>{setValue(Number(e.target.value))}}
+          value={passwordLength.toString()}
+          onChange={(e)=>{setPasswordLength(Number(e.target.value))}}
+          onBlur={()=>{
+            if (passwordLength < MIN_LENGTH) {setPasswordLength(MIN_LENGTH)}
+            if (passwordLength > MAX_LENGTH) {setPasswordLength(MAX_LENGTH)}
+          }}
         />
         <button
           className='py-2 px-3 text-xl font-light border border-neutral-200 z-10 border-l-0 h-[58px] rounded-r duration-200 text-neutral-500 hover:bg-primary/5 hover:border-primary/40 focus:outline-primary'
-          onClick={()=>{setValue(value + 1)}}
+          onClick={()=>{passwordLength < MAX_LENGTH && setPasswordLength(passwordLength + 1)}}
         >
           +
         </button>
