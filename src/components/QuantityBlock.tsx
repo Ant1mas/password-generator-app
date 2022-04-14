@@ -7,7 +7,7 @@ type Props = {
 
 export default function QuantityBlock({value, setValue}: Props) {
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex flex-wrap items-center justify-center'>
       <input
         className="slider-thumb rounded-xl duration-200 appearance-none w-[400px] bg-primary/30 h-0.5 cursor-pointer hover:bg-primary/50 focus:outline-primary"
         type="range"
@@ -17,7 +17,7 @@ export default function QuantityBlock({value, setValue}: Props) {
         value={value}
         onChange={(e)=>{setValue(Number(e.target.value))}}
       />
-      <div className='inline-flex items-center justify-center ml-5 '>
+      <div className='inline-flex items-center justify-center mt-4 ml-5 md:mt-0 '>
         <button
           className='py-2 px-3 text-2xl font-light border border-neutral-200 z-10 border-r-0 h-[58px] rounded-l duration-200 text-neutral-500 hover:bg-primary/5 hover:border-primary/40 focus:outline-primary'
           onClick={()=>{setValue(value - 1)}}

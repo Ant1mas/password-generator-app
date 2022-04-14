@@ -4,7 +4,7 @@ type Props = {}
 
 export default function Footer({}: Props) {
   return (
-    <footer className='flex justify-center mt-8 mb-4'>
+    <footer className='flex justify-center my-8'>
       <div className='text-sm font-light uppercase text-neutral-500'>
         Created by&nbsp;
         <a

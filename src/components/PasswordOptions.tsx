@@ -9,8 +9,8 @@ type Props = {}
 
 export default function PasswordOptions({}: Props) {
   return (
-    <div className='flex justify-center'>
-      <div className='flex justify-end flex-1 mr-8'>
+    <div className='flex flex-wrap justify-center'>
+      <div className='flex justify-center w-full sm:justify-end sm:mr-8 sm:flex-1'>
         <div className='flex flex-col'>
           <Checkbox 
             label='Lowercase'
@@ -40,8 +40,8 @@ export default function PasswordOptions({}: Props) {
           </Button>
         </div>
       </div>
-      <div className='flex w-0.5 bg-neutral-200'></div>
-      <div className='flex flex-1 ml-8'>
+      <div className='w-0.5 bg-neutral-200 hidden sm:flex'></div>
+      <div className='flex justify-center sm:justify-start sm:flex-1 sm:ml-8'>
         <div className='flex flex-col'>
           <div className='inline-flex items-center'>
             <Checkbox 

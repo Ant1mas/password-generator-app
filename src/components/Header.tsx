@@ -7,7 +7,7 @@ type Props = {}
 
 export default function Header({}: Props) {
   return (
-    <header className='flex items-center justify-end h-16 px-6'>
+    <header className='flex items-center justify-end h-16 px-3 sm:px-6'>
       <button
         onClick={()=>{}}
         className='p-3 m-1 duration-200 rounded-full hover:bg-neutral-100'

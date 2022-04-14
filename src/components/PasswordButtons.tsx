@@ -9,28 +9,28 @@ type Props = {}
 
 export default function PasswordButtons({}: Props) {
   return (
-    <>
+    <div className='flex flex-wrap justify-center'>
       <Button 
         onClick={()=>{}}
-        className='mx-4'
+        className='justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4'
       >
         <IconUpdate className='inline h-4 mr-2' />
         update
       </Button>
       <Button 
         onClick={()=>{}}
-        className='mx-4'
+        className='justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4'
       >
         <IconCopy className='inline h-4 mr-2' />
         copy
       </Button>
       <Button 
         onClick={()=>{}}
-        className='mx-4'
+        className='justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4'
       >
         <IconQr className='inline h-4 mr-2' />
         QR
       </Button>
-    </>
+    </div>
   )
 }

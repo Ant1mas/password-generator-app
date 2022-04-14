@@ -13,16 +13,14 @@ export default function PasswordGenerator({}: Props) {
 
   return (
     <main className='flex flex-col items-center text-center grow'>
-      <h1 className='font-thin text-[42px] uppercase mt-3 mb-6'>
+      <h1 className='mt-3 mb-6 text-4xl font-thin uppercase sm:text-5xl'>
         Password Generator
       </h1>
       <section className='bg-white w-full max-w-[728px] rounded-xl'>
         <CrackingTime />
-        <div className='px-12 pb-24 pt-9'>
+        <div className='px-4 pt-5 pb-24 md:px-12'>
           <PasswordResult />
-          <div className='mt-3'>
-            <PasswordButtons />
-          </div>
+          <PasswordButtons />
           <div className='mt-10'>
             <QuantityBlock value={range} setValue={setRange} />
           </div>
