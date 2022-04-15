@@ -13,7 +13,9 @@ type Props = {}
 export default function PasswordButtons({}: Props) {
   const {
     generatedPassword,
-    generateNewPassword
+    generateNewPassword,
+    showQrCode,
+    setShowQrCode,
   } = React.useContext(GeneratorContext)
   const { enqueueSnackbar } = useSnackbar()
 
@@ -39,7 +41,7 @@ export default function PasswordButtons({}: Props) {
         copy
       </Button>
       <Button 
-        onClick={()=>{}}
+        onClick={()=>{setShowQrCode(!showQrCode)}}
         className='justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4'
       >
         <IconQr className='inline h-4 mr-2' />

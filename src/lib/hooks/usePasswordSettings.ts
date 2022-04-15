@@ -1,4 +1,5 @@
 import React from 'react';
+import QRCode from 'qrcode'
 
 import generatePassword from 'lib/functions/generatePassword'
 
@@ -16,6 +17,8 @@ export const DEFAULT_CHARSET = CHARSET_OBJECT.lowercase + CHARSET_OBJECT.upperca
 
 export const usePasswordSettings = () => {
   const [generatedPassword, setGeneratedPassword] = React.useState('')
+  const [generatedQrCode, setGeneratedQrCode] = React.useState('')
+  const [showQrCode, setShowQrCode] = React.useState(false)
   const [passwordLength, setPasswordLength] = React.useState(15)
   const [passwordCharset, setPasswordCharset] = React.useState(DEFAULT_CHARSET)
   const [charsetLowercaseOption, setCharsetLowercaseOption] = React.useState(true)
@@ -27,6 +30,7 @@ export const usePasswordSettings = () => {
 
   React.useEffect(()=>{
     if (!generatedPassword) {generateNewPassword()}
+    generateQrCode(generatedPassword)
   }, [generatedPassword])
 
   React.useEffect(()=>{
@@ -58,8 +62,16 @@ export const usePasswordSettings = () => {
     setGeneratedPassword(generatePassword(passwordLength, passwordCharset))
   }
 
+  const generateQrCode = async (text) => {
+    try {
+      setGeneratedQrCode(await QRCode.toDataURL(text))
+    } catch (err) {}
+  }
+
   return {
     generatedPassword,
+    generatedQrCode,
+    showQrCode,
     passwordLength,
     charsetLowercaseOption,
     charsetUppercaseOption,
@@ -67,6 +79,7 @@ export const usePasswordSettings = () => {
     charsetSymbolsOption,
     charsetSymbolsList,
     charsetEasyToReadOption,
+    setShowQrCode,
     setPasswordLength,
     setCharsetLowercaseOption,
     setCharsetUppercaseOption,

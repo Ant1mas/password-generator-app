@@ -7,6 +7,8 @@ export const GeneratorContext = React.createContext(undefined);
 const GeneratorContextProvider = ( props ) => {
   const {
     generatedPassword,
+    generatedQrCode,
+    showQrCode,
     passwordLength,
     charsetLowercaseOption,
     charsetUppercaseOption,
@@ -14,6 +16,7 @@ const GeneratorContextProvider = ( props ) => {
     charsetSymbolsOption,
     charsetSymbolsList,
     charsetEasyToReadOption,
+    setShowQrCode,
     setPasswordLength,
     setCharsetLowercaseOption,
     setCharsetUppercaseOption,
@@ -27,6 +30,8 @@ const GeneratorContextProvider = ( props ) => {
     <GeneratorContext.Provider
       value={{
         generatedPassword,
+        generatedQrCode,
+        showQrCode,
         passwordLength,
         charsetLowercaseOption,
         charsetUppercaseOption,
@@ -34,6 +39,7 @@ const GeneratorContextProvider = ( props ) => {
         charsetSymbolsOption,
         charsetSymbolsList,
         charsetEasyToReadOption,
+        setShowQrCode,
         setPasswordLength,
         setCharsetLowercaseOption,
         setCharsetUppercaseOption,

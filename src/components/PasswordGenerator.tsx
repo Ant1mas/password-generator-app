@@ -3,6 +3,7 @@ import React from 'react'
 import GeneratorContextProvider from 'lib/context/generatorContext'
 import QuantityBlock from 'components/QuantityBlock'
 import CrackingTime from 'components/CrackingTime'
+import QrCode from 'components/QrCode'
 import PasswordButtons from 'components/PasswordButtons'
 import PasswordResult from 'components/PasswordResult'
 import PasswordOptions from 'components/PasswordOptions'
@@ -20,6 +21,7 @@ export default function PasswordGenerator({}: Props) {
           <CrackingTime />
           <div className='px-4 pt-5 pb-24 md:px-12'>
             <PasswordResult />
+            <QrCode />
             <PasswordButtons />
             <div className='mt-10'>
               <QuantityBlock />
