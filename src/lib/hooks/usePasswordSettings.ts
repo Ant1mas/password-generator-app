@@ -2,6 +2,7 @@ import React from 'react';
 import QRCode from 'qrcode'
 
 import generatePassword from 'lib/functions/generatePassword'
+import { ACTIVATED_SYMBOLS } from 'lib/hooks/useAcceptableSymbols';
 
 export const MIN_LENGTH = 6
 export const MAX_LENGTH = 128
@@ -10,7 +11,7 @@ const CHARSET_OBJECT = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   numbers: '0123456789',
-  symbols: '!@#$%^&*',
+  symbols: ACTIVATED_SYMBOLS,
 }
 
 export const DEFAULT_CHARSET = CHARSET_OBJECT.lowercase + CHARSET_OBJECT.uppercase + CHARSET_OBJECT.numbers
@@ -25,8 +26,9 @@ export const usePasswordSettings = () => {
   const [charsetUppercaseOption, setCharsetUppercaseOption] = React.useState(true)
   const [charsetNumbersOption, setCharsetNumbersOption] = React.useState(true)
   const [charsetSymbolsOption, setCharsetSymbolsOption] = React.useState(false)
-  const [charsetSymbolsList, setCharsetSymbolsList] = React.useState([])
+  const [charsetSymbolsList, setCharsetSymbolsList] = React.useState(CHARSET_OBJECT.symbols)
   const [charsetEasyToReadOption, setCharsetEasyToReadOption] = React.useState(false)
+
 
   React.useEffect(()=>{
     if (!generatedPassword) {generateNewPassword()}
@@ -47,7 +49,7 @@ export const usePasswordSettings = () => {
     updatedCharset += charsetLowercaseOption ? CHARSET_OBJECT.lowercase : ''
     updatedCharset += charsetUppercaseOption ? CHARSET_OBJECT.uppercase : ''
     updatedCharset += charsetNumbersOption ? CHARSET_OBJECT.numbers : ''
-    updatedCharset += charsetSymbolsOption ? CHARSET_OBJECT.symbols : ''
+    updatedCharset += charsetSymbolsOption ? charsetSymbolsList : ''
     updatedCharset = charsetEasyToReadOption ? updatedCharset.replaceAll(/[oO01lI]/ig, '') : updatedCharset
     setPasswordCharset(updatedCharset)
   }, [
@@ -56,6 +58,7 @@ export const usePasswordSettings = () => {
     charsetNumbersOption,
     charsetSymbolsOption,
     charsetEasyToReadOption,
+    charsetSymbolsList,
   ])
 
   const generateNewPassword = () => {
@@ -86,8 +89,9 @@ export const usePasswordSettings = () => {
     setCharsetNumbersOption,
     setCharsetSymbolsOption,
     setCharsetEasyToReadOption,
+    setCharsetSymbolsList,
     generateNewPassword,
   }
 }
 
-export default usePasswordSettings;
+export default usePasswordSettings

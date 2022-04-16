@@ -5,10 +5,12 @@ import IconEdit from 'public/icons/edit.svg'
 import IconInfo from 'public/icons/info.svg'
 import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
+import EditSymbolsModal from 'components/EditSymbolsModal'
 
 type Props = {}
 
 export default function PasswordOptions({}: Props) {
+  const [editSymbolsModalOpened, setEditSymbolsModalOpened] = React.useState(false)
   const {
     charsetLowercaseOption,
     charsetUppercaseOption,
@@ -51,11 +53,12 @@ export default function PasswordOptions({}: Props) {
             className='my-2'
           />
           <Button
-            onClick={()=>{}}
+            onClick={()=>{setEditSymbolsModalOpened(true)}}
             className='my-2'
           >
             <IconEdit className='inline h-4 mr-2' />
             edit symbols
+            <EditSymbolsModal opened={editSymbolsModalOpened} handleOpened={setEditSymbolsModalOpened} />
           </Button>
         </div>
       </div>
@@ -70,7 +73,6 @@ export default function PasswordOptions({}: Props) {
               className='my-2'
             />
             <button
-              onClick={()=>{}}
               className='inline p-1 ml-1 duration-200 rounded-full focus:outline-primary'
             >
               <IconInfo className='h-5 duration-200 fill-neutral-400 hover:fill-primary/75' />

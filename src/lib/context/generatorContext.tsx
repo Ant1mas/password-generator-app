@@ -23,6 +23,7 @@ const GeneratorContextProvider = ( props ) => {
     setCharsetNumbersOption,
     setCharsetSymbolsOption,
     setCharsetEasyToReadOption,
+    setCharsetSymbolsList,
     generateNewPassword,
   } = usePasswordSettings();
 
@@ -46,6 +47,7 @@ const GeneratorContextProvider = ( props ) => {
         setCharsetNumbersOption,
         setCharsetSymbolsOption,
         setCharsetEasyToReadOption,
+        setCharsetSymbolsList,
         generateNewPassword,
       }}
     >
