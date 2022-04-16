@@ -73,9 +73,12 @@ export default function PasswordOptions({}: Props) {
               className='my-2'
             />
             <button
-              className='inline p-1 ml-1 duration-200 rounded-full focus:outline-primary'
+              className='relative inline p-1 ml-1 duration-200 rounded-full group focus:outline-primary'
             >
               <IconInfo className='h-5 duration-200 fill-neutral-400 hover:fill-primary/75' />
+              <div className='absolute flex items-center opacity-0 justify-center invisible p-3 mt-1 duration-200 bg-white border rounded shadow w-48 right-[-50%] translate-x-[25%] top-full text-sm group-hover:visible group-hover:opacity-100'>
+                Avoid ambiguous characters (o, O, 0, 1, l, I)
+              </div>
             </button>
           </div>
         </div>
