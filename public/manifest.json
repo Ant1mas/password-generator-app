@@ -1,0 +1,33 @@
+{
+  "name": "Password Generator",
+  "short_name": "Password Generator",
+  "id": "/pwd/",
+  "start_url": "./",
+  "scope": ".",
+  "theme_color": "#6a91f0",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+      
+      {
+          "src": "favicon/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "favicon/icon-256x256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+      },
+      {
+          "src": "favicon/icon-384x384.png",
+          "sizes": "384x384",
+          "type": "image/png"
+      },
+      {
+          "src": "favicon/icon-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
+  ]
+}

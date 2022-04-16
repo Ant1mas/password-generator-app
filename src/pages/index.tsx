@@ -16,7 +16,7 @@ export function Home() {
           content="Password Generator"
         />
       </Head>
-      <div className='bg-neutral-50 min-h-screen flex flex-col'>
+      <div className='flex flex-col min-h-screen bg-neutral-50'>
         <Header />
         <PasswordGenerator />
         <Footer />

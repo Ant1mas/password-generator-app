@@ -2,6 +2,8 @@ module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/lib/plugins/**/*.{js,ts,jsx,tsx}",
+    "./src/lib/functions/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
@@ -13,5 +15,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('./src/lib/plugins/tailwindcss/scrollbar.js'),
+  ],
 }
