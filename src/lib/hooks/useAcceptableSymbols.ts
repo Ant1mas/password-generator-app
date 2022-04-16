@@ -51,14 +51,11 @@ export const useAcceptableSymbols = () => {
 
   React.useEffect(() => {
     setActivatedSymbolsString(getActivatedSymbolsString())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activatedSymbols])
 
   const getSymbolIndex = (symbol) => {
     return ACCEPTABLE_SYMBOLS.indexOf(symbol) !== -1 ? ACCEPTABLE_SYMBOLS.indexOf(symbol) : null
-  }
-
-  const getSymbolByIndex = (symbolIndex) => {
-    return ACCEPTABLE_SYMBOLS[symbolIndex]
   }
 
   const isSymbolActivated = (symbol) => {

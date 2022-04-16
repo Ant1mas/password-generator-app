@@ -22,6 +22,7 @@ export default function EditSymbolsModal({opened = false, handleOpened}: Props) 
 
   React.useEffect(() => {
     setCharsetSymbolsList(activatedSymbolsString)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activatedSymbolsString])
 
   return (
