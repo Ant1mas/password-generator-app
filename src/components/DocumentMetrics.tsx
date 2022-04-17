@@ -1,11 +1,11 @@
-const googleMetricsiId = ''
-const yandexId = ''
+// const googleMetricsiId = ''
+const yandexId = '88403635'
 
 export function DocumentMetrics() {
   return (
     <>
       {/* google analytics */}
-      <script // eslint-disable-line
+      {/* <script // eslint-disable-line
         src={`https://www.googletagmanager.com/gtag/js?id=${googleMetricsiId}`}
       />
       <script // eslint-disable-line
@@ -18,7 +18,7 @@ export function DocumentMetrics() {
             gtag('config', ${googleMetricsiId});
           `
         }}
-      />
+      /> */}
       {/* yandex metrika */}
       <script // eslint-disable-line
         id="yandex-metrika"

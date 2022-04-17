@@ -15,7 +15,7 @@ export default function QrCode({}: Props) {
       }<img
         src={generatedQrCode}
         alt="Password QR Code"
-        className='w-44 h-44'
+        className='w-44 h-44 ym-hide-content'
       />
     </div>
   )

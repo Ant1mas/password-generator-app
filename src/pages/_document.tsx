@@ -2,7 +2,7 @@ import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import DocumentFavicon from 'components/DocumentFavicon'
-// import DocumentMetrics from 'components/DocumentMetrics'
+import DocumentMetrics from 'components/DocumentMetrics'
 
 export default class MyDocument extends Document {
   render() {
@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          {/* <DocumentMetrics /> */}
+          <DocumentMetrics />
           <Main />
           <NextScript />
         </body>
