@@ -32,6 +32,7 @@ specifiers:
   qrcode: ^1.5.0
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-gtm-module: ^2.0.11
   react-i18next: ^11.16.1
   tailwindcss: ^3.0.23
   typescript: ^4.6.2
@@ -52,6 +53,7 @@ dependencies:
   qrcode: 1.5.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-gtm-module: 2.0.11
   react-i18next: 11.16.5_013ea34a31edc8436f8ab1a34b67a82e
 
 devDependencies:
@@ -5864,6 +5866,10 @@ packages:
       object-assign: 4.1.1
       react: 17.0.2
       scheduler: 0.20.2
+    dev: false
+
+  /react-gtm-module/2.0.11:
+    resolution: {integrity: sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==}
     dev: false
 
   /react-i18next/11.16.5_013ea34a31edc8436f8ab1a34b67a82e:
