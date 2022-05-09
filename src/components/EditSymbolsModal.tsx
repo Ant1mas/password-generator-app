@@ -11,7 +11,10 @@ type Props = {
   handleOpened?: Function
 }
 
-export default function EditSymbolsModal({opened = false, handleOpened}: Props) {
+export default function EditSymbolsModal({
+  opened = false,
+  handleOpened,
+}: Props) {
   const {
     acceptableSymbols,
     activatedSymbolsString,
@@ -22,27 +25,31 @@ export default function EditSymbolsModal({opened = false, handleOpened}: Props) 
 
   React.useEffect(() => {
     setCharsetSymbolsList(activatedSymbolsString)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activatedSymbolsString])
 
   return (
     <Modal opened={opened} handleOpened={handleOpened}>
-      <div className='flex flex-col items-center px-12 py-7'>
-        <h4 className='text-lg font-light uppercase'>Acceptable Symbols</h4>
-        <div className='grid grid-cols-3 mt-4 gap-7'>
+      <div className="flex flex-col items-center px-12 py-7">
+        <h4 className="text-lg font-light uppercase">Acceptable Symbols</h4>
+        <div className="grid grid-cols-3 mt-4 gap-7">
           {acceptableSymbols.map((symbol, index) => (
-            <Checkbox 
+            <Checkbox
               key={index}
               label={symbol}
               checked={isSymbolActivated(symbol)}
-              onChange={(val)=>{setSymbol(symbol, val)}}
-              className=''
+              onChange={(val) => {
+                setSymbol(symbol, val)
+              }}
+              className=""
             />
           ))}
         </div>
         <Button
-          onClick={() => {handleOpened(false)}}
-          className='w-full mt-6'
+          onClick={() => {
+            handleOpened(false)
+          }}
+          className="w-full mt-6"
         >
           Close
         </Button>

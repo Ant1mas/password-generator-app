@@ -4,11 +4,12 @@ type Props = {
   children: JSX.Element
 }
 
-export default function Portal({children}: Props) {
-  if (typeof window !== 'object') {return null}
+export default function Portal({ children }: Props) {
+  if (typeof window !== 'object') {
+    return null
+  }
   return ReactDOM.createPortal(
-    <div className="portal">
-      {children}
-    </div>
-  ,document.body)
+    <div className="portal">{children}</div>,
+    document.body
+  )
 }

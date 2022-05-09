@@ -3,38 +3,38 @@ import React from 'react'
 export const ACTIVATED_SYMBOLS = '!@#$%^&*'
 
 const ACCEPTABLE_SYMBOLS = [
-  "!",
-  "*",
-  "#",
-  "%",
-  "$",
-  "&",
-  "@",
-  "^",
-  "?",
-  "+",
-  "-",
-  "=",
-  "(",
-  ")",
-  "{",
-  "}",
-  "[",
-  "]",
-  "<",
-  ">",
-  ".",
-  ",",
-  "/",
-  "\\",
-  "\"",
+  '!',
+  '*',
+  '#',
+  '%',
+  '$',
+  '&',
+  '@',
+  '^',
+  '?',
+  '+',
+  '-',
+  '=',
+  '(',
+  ')',
+  '{',
+  '}',
+  '[',
+  ']',
+  '<',
+  '>',
+  '.',
+  ',',
+  '/',
+  '\\',
+  '"',
   "'",
-  "`",
-  ":",
-  ";",
-  "_",
-  "|",
-  "~",
+  '`',
+  ':',
+  ';',
+  '_',
+  '|',
+  '~',
 ]
 
 const getIndexesBySymbols = (symbols) => {
@@ -46,16 +46,21 @@ const getIndexesBySymbols = (symbols) => {
 }
 
 export const useAcceptableSymbols = () => {
-  const [activatedSymbols, setActivatedSymbols] = React.useState(getIndexesBySymbols(ACTIVATED_SYMBOLS))
-  const [activatedSymbolsString, setActivatedSymbolsString] = React.useState(ACTIVATED_SYMBOLS)
+  const [activatedSymbols, setActivatedSymbols] = React.useState(
+    getIndexesBySymbols(ACTIVATED_SYMBOLS)
+  )
+  const [activatedSymbolsString, setActivatedSymbolsString] =
+    React.useState(ACTIVATED_SYMBOLS)
 
   React.useEffect(() => {
     setActivatedSymbolsString(getActivatedSymbolsString())
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activatedSymbols])
 
   const getSymbolIndex = (symbol) => {
-    return ACCEPTABLE_SYMBOLS.indexOf(symbol) !== -1 ? ACCEPTABLE_SYMBOLS.indexOf(symbol) : null
+    return ACCEPTABLE_SYMBOLS.indexOf(symbol) !== -1
+      ? ACCEPTABLE_SYMBOLS.indexOf(symbol)
+      : null
   }
 
   const isSymbolActivated = (symbol) => {
@@ -76,7 +81,9 @@ export const useAcceptableSymbols = () => {
       ACCEPTABLE_SYMBOLS.includes(symbol) &&
       activatedSymbols.includes(getSymbolIndex(symbol))
     ) {
-      setActivatedSymbols(activatedSymbols.filter((e) => e !== getSymbolIndex(symbol)))
+      setActivatedSymbols(
+        activatedSymbols.filter((e) => e !== getSymbolIndex(symbol))
+      )
     }
   }
 

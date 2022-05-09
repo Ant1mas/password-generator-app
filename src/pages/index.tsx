@@ -8,15 +8,10 @@ export function Home() {
   return (
     <>
       <Head>
-        <title>
-          Password Generator
-        </title>
-        <meta
-          name="description"
-          content="Password Generator"
-        />
+        <title>Password Generator</title>
+        <meta name="description" content="Password Generator" />
       </Head>
-      <div className='flex flex-col min-h-screen bg-neutral-50'>
+      <div className="flex flex-col min-h-screen bg-neutral-50">
         <Header />
         <PasswordGenerator />
         <Footer />

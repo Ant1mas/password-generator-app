@@ -1,12 +1,11 @@
-type CharactersGroups = 
-  'lowercase' | 
-  'uppercase' |
-  'numbers' |
-  'symbols'
+type CharactersGroups = 'lowercase' | 'uppercase' | 'numbers' | 'symbols'
 
 type CharactersGroupsArray = CharactersGroups[]
 
-export default function getPasswordsStrength(length = 1, groups:CharactersGroupsArray = []) {
+export default function getPasswordsStrength(
+  length = 1,
+  groups: CharactersGroupsArray = []
+) {
   const GROUPS_COMBINATIONS = [
     ['numbers'],
     ['lowercase'],
@@ -47,19 +46,13 @@ export default function getPasswordsStrength(length = 1, groups:CharactersGroups
   let currentGroupCombination = -1
   if (groups.includes('numbers')) {
     currentGroupCombination = 0
-    if (
-      groups.includes('lowercase') ||
-      groups.includes('uppercase')
-    ) {
+    if (groups.includes('lowercase') || groups.includes('uppercase')) {
       currentGroupCombination = 2
       if (groups.includes('symbols')) {
         currentGroupCombination = 3
       }
     }
-    if (
-      groups.includes('lowercase') &&
-      groups.includes('uppercase')
-    ) {
+    if (groups.includes('lowercase') && groups.includes('uppercase')) {
       currentGroupCombination = 3
       if (groups.includes('symbols')) {
         currentGroupCombination = 4
@@ -93,8 +86,13 @@ export default function getPasswordsStrength(length = 1, groups:CharactersGroups
       }
     }
   }
-  const numberOfCombinations = GROUPS_COMBINATIONS.length * Object.keys(LENGTH_GROUP_TIME).length
-  let strengthPercent = ((length - 6) * GROUPS_COMBINATIONS.length + (currentGroupCombination + 1)) / numberOfCombinations * 100
+  const numberOfCombinations =
+    GROUPS_COMBINATIONS.length * Object.keys(LENGTH_GROUP_TIME).length
+  let strengthPercent =
+    (((length - 6) * GROUPS_COMBINATIONS.length +
+      (currentGroupCombination + 1)) /
+      numberOfCombinations) *
+    100
   strengthPercent = strengthPercent > 100 ? 100 : strengthPercent
   strengthPercent = strengthPercent < 0 ? 0 : strengthPercent
   strengthPercent = currentGroupCombination < 0 ? 0 : strengthPercent
