@@ -1,11 +1,14 @@
 const withPWA = require("next-pwa")
 
+const pwaCaching = require("./pwa-caching")
+
 module.exports = withPWA({
   basePath: '/pwd',
   pwa: {
     dest: "public",
     register: true,
-    skipWaiting: true,
+    dynamicStartUrl: false,
+    runtimeCaching: pwaCaching,
     disable: process.env.NODE_ENV === "development",
   },
   webpack(config) {

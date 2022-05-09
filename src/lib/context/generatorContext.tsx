@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react'
 
 import { usePasswordSettings } from 'lib/hooks/usePasswordSettings'
 
-export const GeneratorContext = React.createContext(undefined);
+export const GeneratorContext = React.createContext(undefined)
 
-const GeneratorContextProvider = ( props ) => {
+const GeneratorContextProvider = (props) => {
   const {
     generatedPassword,
     generatedQrCode,
@@ -25,7 +25,7 @@ const GeneratorContextProvider = ( props ) => {
     setCharsetEasyToReadOption,
     setCharsetSymbolsList,
     generateNewPassword,
-  } = usePasswordSettings();
+  } = usePasswordSettings()
 
   return (
     <GeneratorContext.Provider

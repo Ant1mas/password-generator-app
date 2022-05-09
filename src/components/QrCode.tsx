@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
@@ -9,13 +10,14 @@ export default function QrCode({}: Props) {
 
   return (
     <div
-      className={`flex justify-center overflow-hidden duration-300 ${showQrCode ? 'h-44' : 'h-0'}`}
+      className={`flex justify-center overflow-hidden duration-300 ${
+        showQrCode ? 'h-44' : 'h-0'
+      }`}
     >
-      {// eslint-disable-next-line @next/next/no-img-element
-      }<img
+      <img
         src={generatedQrCode}
         alt="Password QR Code"
-        className='w-44 h-44 ym-hide-content'
+        className="w-44 h-44 ym-hide-content"
       />
     </div>
   )

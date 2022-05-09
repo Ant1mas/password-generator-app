@@ -15,14 +15,16 @@ export default function Checkbox({
   classNameText,
   label,
   checked = false,
-  onChange = ()=>{},
+  onChange = () => {},
 }: Props) {
   return (
     <label className={`${className} flex items-center cursor-pointer`}>
-      <input 
-        type='checkbox'
+      <input
+        type="checkbox"
         checked={checked}
-        onChange={(e)=>{onChange(e.target.checked)}}
+        onChange={(e) => {
+          onChange(e.target.checked)
+        }}
         className={`${classNameInput} w-5 h-5 duration-200 border rounded cursor-pointer border-neutral-200 text-primary hover:bg-primary/5 hover:border-primary/40 focus:ring-primary`}
       />
       <span className={`${classNameText} ml-3 text-neutral-600`}>{label}</span>

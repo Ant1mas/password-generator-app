@@ -10,7 +10,8 @@ import EditSymbolsModal from 'components/EditSymbolsModal'
 type Props = {}
 
 export default function PasswordOptions({}: Props) {
-  const [editSymbolsModalOpened, setEditSymbolsModalOpened] = React.useState(false)
+  const [editSymbolsModalOpened, setEditSymbolsModalOpened] =
+    React.useState(false)
   const {
     charsetLowercaseOption,
     charsetUppercaseOption,
@@ -22,61 +23,74 @@ export default function PasswordOptions({}: Props) {
     setCharsetNumbersOption,
     setCharsetSymbolsOption,
     setCharsetEasyToReadOption,
-  } = React.useContext(GeneratorContext);
+  } = React.useContext(GeneratorContext)
 
   return (
-    <div className='flex flex-wrap justify-center'>
-      <div className='flex justify-center w-full sm:justify-end sm:mr-8 sm:flex-1'>
-        <div className='flex flex-col'>
-          <Checkbox 
-            label='Lowercase'
+    <div className="flex flex-wrap justify-center">
+      <div className="flex justify-center w-full sm:justify-end sm:mr-8 sm:flex-1">
+        <div className="flex flex-col">
+          <Checkbox
+            label="Lowercase"
             checked={charsetLowercaseOption}
-            onChange={(val)=>{setCharsetLowercaseOption(val)}}
-            className='my-2'
+            onChange={(val) => {
+              setCharsetLowercaseOption(val)
+            }}
+            className="my-2"
           />
-          <Checkbox 
-            label='UPPERCASE'
+          <Checkbox
+            label="UPPERCASE"
             checked={charsetUppercaseOption}
-            onChange={(val)=>{setCharsetUppercaseOption(val)}}
-            className='my-2'
+            onChange={(val) => {
+              setCharsetUppercaseOption(val)
+            }}
+            className="my-2"
           />
-          <Checkbox 
-            label='Numbers'
+          <Checkbox
+            label="Numbers"
             checked={charsetNumbersOption}
-            onChange={(val)=>{setCharsetNumbersOption(val)}}
-            className='my-2'
+            onChange={(val) => {
+              setCharsetNumbersOption(val)
+            }}
+            className="my-2"
           />
-          <Checkbox 
-            label='Symbols'
+          <Checkbox
+            label="Symbols"
             checked={charsetSymbolsOption}
-            onChange={(val)=>{setCharsetSymbolsOption(val)}}
-            className='my-2'
+            onChange={(val) => {
+              setCharsetSymbolsOption(val)
+            }}
+            className="my-2"
           />
           <Button
-            onClick={()=>{setEditSymbolsModalOpened(true)}}
-            className='my-2'
+            onClick={() => {
+              setEditSymbolsModalOpened(true)
+            }}
+            className="my-2"
           >
-            <IconEdit className='inline h-4 mr-2' />
+            <IconEdit className="inline h-4 mr-2" />
             edit symbols
-            <EditSymbolsModal opened={editSymbolsModalOpened} handleOpened={setEditSymbolsModalOpened} />
+            <EditSymbolsModal
+              opened={editSymbolsModalOpened}
+              handleOpened={setEditSymbolsModalOpened}
+            />
           </Button>
         </div>
       </div>
-      <div className='w-0.5 bg-neutral-200 hidden sm:flex'></div>
-      <div className='flex justify-center sm:justify-start sm:flex-1 sm:ml-8'>
-        <div className='flex flex-col'>
-          <div className='inline-flex items-center'>
-            <Checkbox 
-              label='Easy to read'
+      <div className="w-0.5 bg-neutral-200 hidden sm:flex"></div>
+      <div className="flex justify-center sm:justify-start sm:flex-1 sm:ml-8">
+        <div className="flex flex-col">
+          <div className="inline-flex items-center">
+            <Checkbox
+              label="Easy to read"
               checked={charsetEasyToReadOption}
-              onChange={(val)=>{setCharsetEasyToReadOption(val)}}
-              className='my-2'
+              onChange={(val) => {
+                setCharsetEasyToReadOption(val)
+              }}
+              className="my-2"
             />
-            <button
-              className='relative inline p-1 ml-1 duration-200 rounded-full group focus:outline-primary'
-            >
-              <IconInfo className='h-5 duration-200 fill-neutral-400 hover:fill-primary/75' />
-              <div className='absolute flex items-center opacity-0 justify-center invisible p-3 mt-1 duration-200 bg-white border rounded shadow w-48 right-[-50%] translate-x-[25%] top-full text-sm group-hover:visible group-hover:opacity-100'>
+            <button className="relative inline p-1 ml-1 duration-200 rounded-full group focus:outline-primary">
+              <IconInfo className="h-5 duration-200 fill-neutral-400 hover:fill-primary/75" />
+              <div className="absolute flex items-center opacity-0 justify-center invisible p-3 mt-1 duration-200 bg-white border rounded shadow w-48 right-[-50%] translate-x-[25%] top-full text-sm group-hover:visible group-hover:opacity-100">
                 Avoid ambiguous characters (o, O, 0, 1, l, I)
               </div>
             </button>
