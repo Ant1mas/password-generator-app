@@ -4,6 +4,7 @@ const pwaCaching = require("./pwa-caching")
 
 module.exports = {
   basePath: '/pwd',
+  output: 'standalone',
   // pwa: {
   //   dest: "public",
   //   register: true,

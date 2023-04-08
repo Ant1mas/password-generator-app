@@ -6,7 +6,7 @@ import DocumentFavicon from 'components/DocumentFavicon'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="ru">
+      <Html lang="en">
         <Head>
           <DocumentFavicon />
           <meta name="theme-color" content="#fff" />
