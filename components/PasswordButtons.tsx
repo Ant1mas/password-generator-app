@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { useSnackbar } from 'notistack'
+import toast from 'react-hot-toast'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
 import copyToClipboard from 'lib/functions/copyToClipboard'
@@ -11,7 +11,6 @@ import Button from 'components/Button'
 export default function PasswordButtons() {
   const { generatedPassword, generateNewPassword, showQrCode, setShowQrCode } =
     useContext(GeneratorContext)
-  const { enqueueSnackbar } = useSnackbar()
 
   return (
     <div className="flex flex-wrap justify-center">
@@ -27,9 +26,7 @@ export default function PasswordButtons() {
       <Button
         onClick={() => {
           copyToClipboard(generatedPassword)
-          enqueueSnackbar('Copied', {
-            autoHideDuration: 1000,
-          })
+          toast.success('Copied', { duration: 1000 })
         }}
         className="mx-2 my-1 w-full justify-center sm:mx-4 sm:w-auto"
       >
