@@ -1,4 +1,4 @@
-import BASE_PATH from 'lib/constants/basePath'
+import { BASE_PATH } from 'lib/constants/basePath'
 import pwaManifest from 'public/manifest.json'
 
 export default function DefaultMetadata() {
