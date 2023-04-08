@@ -18,7 +18,7 @@ const CHARSET_OBJECT = {
 export const DEFAULT_CHARSET =
   CHARSET_OBJECT.lowercase + CHARSET_OBJECT.uppercase + CHARSET_OBJECT.numbers
 
-export const usePasswordSettings = () => {
+export default function usePasswordSettings() {
   const [generatedPassword, setGeneratedPassword] = useState('')
   const [generatedQrCode, setGeneratedQrCode] = useState('')
   const [showQrCode, setShowQrCode] = useState(false)
@@ -97,5 +97,3 @@ export const usePasswordSettings = () => {
     generateNewPassword,
   }
 }
-
-export default usePasswordSettings

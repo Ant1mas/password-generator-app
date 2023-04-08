@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { useContext } from 'react'
-
-import { GeneratorContext } from 'lib/context/generatorContext'
+import { useGeneratorContext } from '@/lib/context/GeneratorContext'
 
 export default function QrCode() {
-  const { generatedQrCode, showQrCode } = useContext(GeneratorContext)
+  const { generatedQrCode, showQrCode } = useGeneratorContext()
 
   return (
     <div

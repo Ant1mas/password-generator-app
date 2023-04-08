@@ -1,6 +1,4 @@
-import { useContext } from 'react'
-
-import { GeneratorContext } from 'lib/context/generatorContext'
+import { useGeneratorContext } from '@/lib/context/GeneratorContext'
 import getPasswordsStrength from 'lib/functions/getPasswordsStrength'
 import getPasswordGradient from 'lib/functions/getPasswordGradient'
 
@@ -11,7 +9,7 @@ export default function PasswordStrength() {
     charsetUppercaseOption,
     charsetNumbersOption,
     charsetSymbolsOption,
-  } = useContext(GeneratorContext)
+  } = useGeneratorContext()
 
   let charactersGroupsArray = []
   if (charsetLowercaseOption) {

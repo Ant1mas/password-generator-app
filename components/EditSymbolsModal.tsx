@@ -1,6 +1,6 @@
-import { useEffect, useContext } from 'react'
+import { useEffect } from 'react'
 
-import { GeneratorContext } from 'lib/context/generatorContext'
+import { useGeneratorContext } from '@/lib/context/GeneratorContext'
 import { useAcceptableSymbols } from 'lib/hooks/useAcceptableSymbols'
 import Modal from 'components/Modal'
 import Checkbox from 'components/Checkbox'
@@ -21,7 +21,7 @@ export default function EditSymbolsModal({
     isSymbolActivated,
     setSymbol,
   } = useAcceptableSymbols()
-  const { setCharsetSymbolsList } = useContext(GeneratorContext)
+  const { setCharsetSymbolsList } = useGeneratorContext()
 
   useEffect(() => {
     setCharsetSymbolsList(activatedSymbolsString)

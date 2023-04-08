@@ -1,10 +1,16 @@
-import { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 
-import { usePasswordSettings } from 'lib/hooks/usePasswordSettings'
+import usePasswordSettings from 'lib/hooks/usePasswordSettings'
 
-export const GeneratorContext = createContext(undefined)
+const GeneratorContext = createContext(undefined)
 
-const GeneratorContextProvider = (props) => {
+interface ProviderProps {
+  children: React.ReactNode
+}
+
+export const GeneratorContextProvider: React.FC<ProviderProps> = ({
+  children,
+}) => {
   const {
     generatedPassword,
     generatedQrCode,
@@ -51,9 +57,13 @@ const GeneratorContextProvider = (props) => {
         generateNewPassword,
       }}
     >
-      {props.children}
+      {children}
     </GeneratorContext.Provider>
   )
 }
 
-export default GeneratorContextProvider
+// Define a hook to use the context value.
+export const useGeneratorContext = () => {
+  const context = useContext(GeneratorContext)
+  return context
+}

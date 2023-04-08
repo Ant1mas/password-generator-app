@@ -1,7 +1,6 @@
-import { useContext } from 'react'
 import toast from 'react-hot-toast'
 
-import { GeneratorContext } from 'lib/context/generatorContext'
+import { useGeneratorContext } from '@/lib/context/GeneratorContext'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 import IconUpdate from 'public/icons/update.svg'
 import IconCopy from 'public/icons/copy.svg'
@@ -10,7 +9,7 @@ import Button from 'components/Button'
 
 export default function PasswordButtons() {
   const { generatedPassword, generateNewPassword, showQrCode, setShowQrCode } =
-    useContext(GeneratorContext)
+    useGeneratorContext()
 
   return (
     <div className="flex flex-wrap justify-center">

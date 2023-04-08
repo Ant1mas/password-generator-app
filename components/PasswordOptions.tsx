@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 
-import { GeneratorContext } from 'lib/context/generatorContext'
+import { useGeneratorContext } from '@/lib/context/GeneratorContext'
 import IconEdit from 'public/icons/edit.svg'
 import IconInfo from 'public/icons/info.svg'
 import Button from 'components/Button'
@@ -20,7 +20,7 @@ export default function PasswordOptions() {
     setCharsetNumbersOption,
     setCharsetSymbolsOption,
     setCharsetEasyToReadOption,
-  } = useContext(GeneratorContext)
+  } = useGeneratorContext()
 
   return (
     <div className="flex flex-wrap justify-center">

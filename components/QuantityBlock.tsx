@@ -1,10 +1,8 @@
-import { useContext } from 'react'
-
-import { GeneratorContext } from 'lib/context/generatorContext'
+import { useGeneratorContext } from '@/lib/context/GeneratorContext'
 import { MIN_LENGTH, MAX_LENGTH } from 'lib/hooks/usePasswordSettings'
 
 export default function QuantityBlock() {
-  const { passwordLength, setPasswordLength } = useContext(GeneratorContext)
+  const { passwordLength, setPasswordLength } = useGeneratorContext()
 
   return (
     <div className="flex flex-wrap items-center justify-center">
