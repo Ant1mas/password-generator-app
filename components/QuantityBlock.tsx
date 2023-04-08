@@ -1,4 +1,4 @@
-import { useGeneratorContext } from '@/lib/context/GeneratorContext'
+import { useGeneratorContext } from 'lib/context/generatorContext'
 import { MIN_LENGTH, MAX_LENGTH } from 'lib/hooks/usePasswordSettings'
 
 export default function QuantityBlock() {

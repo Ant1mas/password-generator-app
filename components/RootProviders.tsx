@@ -1,4 +1,4 @@
-import { GeneratorContextProvider } from '@/lib/context/GeneratorContext'
+import { GeneratorContextProvider } from 'lib/context/generatorContext'
 
 type Props = {
   children: React.ReactElement

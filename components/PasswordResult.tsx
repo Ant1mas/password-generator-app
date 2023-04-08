@@ -1,4 +1,4 @@
-import { useGeneratorContext } from '@/lib/context/GeneratorContext'
+import { useGeneratorContext } from 'lib/context/generatorContext'
 
 export default function PasswordResult() {
   const { generatedPassword } = useGeneratorContext()

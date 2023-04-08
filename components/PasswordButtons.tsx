@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast'
 
-import { useGeneratorContext } from '@/lib/context/GeneratorContext'
+import { useGeneratorContext } from 'lib/context/generatorContext'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 import IconUpdate from 'public/icons/update.svg'
 import IconCopy from 'public/icons/copy.svg'

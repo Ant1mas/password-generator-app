@@ -1,4 +1,4 @@
-import { useGeneratorContext } from '@/lib/context/GeneratorContext'
+import { useGeneratorContext } from 'lib/context/generatorContext'
 import getPasswordsStrength from 'lib/functions/getPasswordsStrength'
 import getPasswordGradient from 'lib/functions/getPasswordGradient'
 
