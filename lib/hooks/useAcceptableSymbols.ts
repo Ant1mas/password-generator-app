@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
 export const ACTIVATED_SYMBOLS = '!@#$%^&*'
 
@@ -46,13 +46,13 @@ const getIndexesBySymbols = (symbols) => {
 }
 
 export const useAcceptableSymbols = () => {
-  const [activatedSymbols, setActivatedSymbols] = React.useState(
-    getIndexesBySymbols(ACTIVATED_SYMBOLS)
+  const [activatedSymbols, setActivatedSymbols] = useState(
+    getIndexesBySymbols(ACTIVATED_SYMBOLS),
   )
   const [activatedSymbolsString, setActivatedSymbolsString] =
-    React.useState(ACTIVATED_SYMBOLS)
+    useState(ACTIVATED_SYMBOLS)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setActivatedSymbolsString(getActivatedSymbolsString())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activatedSymbols])
@@ -82,7 +82,7 @@ export const useAcceptableSymbols = () => {
       activatedSymbols.includes(getSymbolIndex(symbol))
     ) {
       setActivatedSymbols(
-        activatedSymbols.filter((e) => e !== getSymbolIndex(symbol))
+        activatedSymbols.filter((e) => e !== getSymbolIndex(symbol)),
       )
     }
   }

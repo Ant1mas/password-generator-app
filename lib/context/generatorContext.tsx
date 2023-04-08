@@ -1,8 +1,8 @@
-import React from 'react'
+import { createContext } from 'react'
 
 import { usePasswordSettings } from 'lib/hooks/usePasswordSettings'
 
-export const GeneratorContext = React.createContext(undefined)
+export const GeneratorContext = createContext(undefined)
 
 const GeneratorContextProvider = (props) => {
   const {

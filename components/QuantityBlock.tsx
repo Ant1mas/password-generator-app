@@ -1,18 +1,15 @@
-import React from 'react'
+import { useContext } from 'react'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
 import { MIN_LENGTH, MAX_LENGTH } from 'lib/hooks/usePasswordSettings'
 
-type Props = {}
-
-export default function QuantityBlock({}: Props) {
-  const { passwordLength, setPasswordLength } =
-    React.useContext(GeneratorContext)
+export default function QuantityBlock() {
+  const { passwordLength, setPasswordLength } = useContext(GeneratorContext)
 
   return (
     <div className="flex flex-wrap items-center justify-center">
       <input
-        className="slider-thumb rounded-xl duration-200 appearance-none w-[400px] bg-primary/30 h-0.5 cursor-pointer hover:bg-primary/50 focus:outline-primary"
+        className="slider-thumb h-0.5 w-[400px] cursor-pointer appearance-none rounded-xl bg-primary/30 duration-200 hover:bg-primary/50 focus:outline-primary"
         type="range"
         min="6"
         max="128"
@@ -22,9 +19,9 @@ export default function QuantityBlock({}: Props) {
           setPasswordLength(Number(e.target.value))
         }}
       />
-      <div className="inline-flex items-center justify-center mt-4 ml-5 md:mt-0 ">
+      <div className="ml-5 mt-4 inline-flex items-center justify-center md:mt-0 ">
         <button
-          className="py-2 px-3 text-2xl font-light border border-neutral-200 z-10 border-r-0 h-[58px] rounded-l duration-200 text-neutral-500 hover:bg-primary/5 hover:border-primary/40 focus:outline-primary"
+          className="z-10 h-[58px] rounded-l border border-r-0 border-neutral-200 px-3 py-2 text-2xl font-light text-neutral-500 duration-200 hover:border-primary/40 hover:bg-primary/5 focus:outline-primary"
           onClick={() => {
             passwordLength > MIN_LENGTH && setPasswordLength(passwordLength - 1)
           }}
@@ -32,7 +29,7 @@ export default function QuantityBlock({}: Props) {
           -
         </button>
         <input
-          className="inline-flex px-3 py-4 text-center duration-200 border outline-none ring-transparent ring-0 border-neutral-200 input-number-hidden-arrows text-neutral-500 hover:text-neutral-700 hover:border-primary/40 hover:bg-primary/5 focus:border-primary"
+          className="input-number-hidden-arrows inline-flex border border-neutral-200 px-3 py-4 text-center text-neutral-500 outline-none ring-0 ring-transparent duration-200 hover:border-primary/40 hover:bg-primary/5 hover:text-neutral-700 focus:border-primary"
           type="number"
           min="6"
           max="128"
@@ -50,7 +47,7 @@ export default function QuantityBlock({}: Props) {
           }}
         />
         <button
-          className="py-2 px-3 text-xl font-light border border-neutral-200 z-10 border-l-0 h-[58px] rounded-r duration-200 text-neutral-500 hover:bg-primary/5 hover:border-primary/40 focus:outline-primary"
+          className="z-10 h-[58px] rounded-r border border-l-0 border-neutral-200 px-3 py-2 text-xl font-light text-neutral-500 duration-200 hover:border-primary/40 hover:bg-primary/5 focus:outline-primary"
           onClick={() => {
             passwordLength < MAX_LENGTH && setPasswordLength(passwordLength + 1)
           }}

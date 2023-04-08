@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useContext } from 'react'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
 import { useAcceptableSymbols } from 'lib/hooks/useAcceptableSymbols'
@@ -21,9 +21,9 @@ export default function EditSymbolsModal({
     isSymbolActivated,
     setSymbol,
   } = useAcceptableSymbols()
-  const { setCharsetSymbolsList } = React.useContext(GeneratorContext)
+  const { setCharsetSymbolsList } = useContext(GeneratorContext)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setCharsetSymbolsList(activatedSymbolsString)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activatedSymbolsString])
@@ -32,7 +32,7 @@ export default function EditSymbolsModal({
     <Modal opened={opened} handleOpened={handleOpened}>
       <div className="flex flex-col items-center px-12 py-7">
         <h4 className="text-lg font-light uppercase">Acceptable Symbols</h4>
-        <div className="grid grid-cols-3 mt-4 gap-7">
+        <div className="mt-4 grid grid-cols-3 gap-7">
           {acceptableSymbols.map((symbol, index) => (
             <Checkbox
               key={index}
@@ -49,7 +49,7 @@ export default function EditSymbolsModal({
           onClick={() => {
             handleOpened(false)
           }}
-          className="w-full mt-6"
+          className="mt-6 w-full"
         >
           Close
         </Button>

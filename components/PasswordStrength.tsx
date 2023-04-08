@@ -1,19 +1,17 @@
-import React from 'react'
+import { useContext } from 'react'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
 import getPasswordsStrength from 'lib/functions/getPasswordsStrength'
 import getPasswordGradient from 'lib/functions/getPasswordGradient'
 
-type Props = {}
-
-export default function PasswordStrength({}: Props) {
+export default function PasswordStrength() {
   const {
     passwordLength,
     charsetLowercaseOption,
     charsetUppercaseOption,
     charsetNumbersOption,
     charsetSymbolsOption,
-  } = React.useContext(GeneratorContext)
+  } = useContext(GeneratorContext)
 
   let charactersGroupsArray = []
   if (charsetLowercaseOption) {
@@ -30,13 +28,13 @@ export default function PasswordStrength({}: Props) {
   }
   const passwordStrength = getPasswordsStrength(
     passwordLength,
-    charactersGroupsArray
+    charactersGroupsArray,
   ).percent
 
   return (
     <div
-      className={`text-sm rounded-xl duration-200 text-white bg-gradient-to-r px-2 py-1.5 ${getPasswordGradient(
-        passwordStrength
+      className={`rounded-xl bg-gradient-to-r px-2 py-1.5 text-sm text-white duration-200 ${getPasswordGradient(
+        passwordStrength,
       )}`}
     >
       {/* Estimated password cracking time is 6 months */}

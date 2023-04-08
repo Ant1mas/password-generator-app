@@ -1,24 +1,13 @@
-import React from 'react'
-
-// import IconTranslate from 'public/icons/translate.svg'
 import IconGithub from 'public/icons/github.svg'
 
-type Props = {}
-
-export default function Header({}: Props) {
+export default function Header() {
   return (
-    <header className="flex items-center justify-end h-16 px-3 sm:px-6">
-      {/* <button
-        onClick={()=>{}}
-        className='p-3 m-1 duration-200 rounded-full hover:bg-neutral-100'
-      >
-        <IconTranslate className="h-6 cursor-pointer fill-neutral-500 " />
-      </button> */}
+    <header className="flex h-16 items-center justify-end px-3 sm:px-6">
       <a
         href="https://github.com/ant1mas"
         target="_blank"
         rel="noreferrer"
-        className="p-3 m-1 duration-200 rounded-full hover:bg-neutral-100"
+        className="m-1 rounded-full p-3 duration-200 hover:bg-neutral-100"
       >
         <IconGithub className="h-6 fill-neutral-500 " />
       </a>

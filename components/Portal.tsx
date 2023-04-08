@@ -10,6 +10,6 @@ export default function Portal({ children }: Props) {
   }
   return ReactDOM.createPortal(
     <div className="portal">{children}</div>,
-    document.body
+    document.body,
   )
 }

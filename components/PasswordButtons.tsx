@@ -1,4 +1,4 @@
-import React from 'react'
+import { useContext } from 'react'
 import { useSnackbar } from 'notistack'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
@@ -8,11 +8,9 @@ import IconCopy from 'public/icons/copy.svg'
 import IconQr from 'public/icons/qr.svg'
 import Button from 'components/Button'
 
-type Props = {}
-
-export default function PasswordButtons({}: Props) {
+export default function PasswordButtons() {
   const { generatedPassword, generateNewPassword, showQrCode, setShowQrCode } =
-    React.useContext(GeneratorContext)
+    useContext(GeneratorContext)
   const { enqueueSnackbar } = useSnackbar()
 
   return (
@@ -21,9 +19,9 @@ export default function PasswordButtons({}: Props) {
         onClick={() => {
           generateNewPassword()
         }}
-        className="justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4"
+        className="mx-2 my-1 w-full justify-center sm:mx-4 sm:w-auto"
       >
-        <IconUpdate className="inline h-4 mr-2" />
+        <IconUpdate className="mr-2 inline h-4" />
         update
       </Button>
       <Button
@@ -33,18 +31,18 @@ export default function PasswordButtons({}: Props) {
             autoHideDuration: 1000,
           })
         }}
-        className="justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4"
+        className="mx-2 my-1 w-full justify-center sm:mx-4 sm:w-auto"
       >
-        <IconCopy className="inline h-4 mr-2" />
+        <IconCopy className="mr-2 inline h-4" />
         copy
       </Button>
       <Button
         onClick={() => {
           setShowQrCode(!showQrCode)
         }}
-        className="justify-center w-full mx-2 my-1 sm:w-auto sm:mx-4"
+        className="mx-2 my-1 w-full justify-center sm:mx-4 sm:w-auto"
       >
-        <IconQr className="inline h-4 mr-2" />
+        <IconQr className="mr-2 inline h-4" />
         QR
       </Button>
     </div>

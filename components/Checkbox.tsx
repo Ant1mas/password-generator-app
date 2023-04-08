@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Props = {
   className?: string
   classNameInput?: string
@@ -18,14 +16,14 @@ export default function Checkbox({
   onChange = () => {},
 }: Props) {
   return (
-    <label className={`${className} flex items-center cursor-pointer`}>
+    <label className={`${className} flex cursor-pointer items-center`}>
       <input
         type="checkbox"
         checked={checked}
         onChange={(e) => {
           onChange(e.target.checked)
         }}
-        className={`${classNameInput} w-5 h-5 duration-200 border rounded cursor-pointer border-neutral-200 text-primary hover:bg-primary/5 hover:border-primary/40 focus:ring-primary`}
+        className={`${classNameInput} h-5 w-5 cursor-pointer rounded border border-neutral-200 text-primary duration-200 hover:border-primary/40 hover:bg-primary/5 focus:ring-primary`}
       />
       <span className={`${classNameText} ml-3 text-neutral-600`}>{label}</span>
     </label>

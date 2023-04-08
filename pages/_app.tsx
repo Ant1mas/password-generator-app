@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module'
@@ -9,7 +9,7 @@ import CustomSnackbarProvider from 'lib/plugins/notistack/CustomSnackbarProvider
 export function App(props: AppProps) {
   const { Component, pageProps } = props
 
-  React.useEffect(() => {
+  useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-KDLQ5GP' })
   }, [])
 

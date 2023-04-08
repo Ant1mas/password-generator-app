@@ -1,12 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import { useContext } from 'react'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
 
-type Props = {}
-
-export default function QrCode({}: Props) {
-  const { generatedQrCode, showQrCode } = React.useContext(GeneratorContext)
+export default function QrCode() {
+  const { generatedQrCode, showQrCode } = useContext(GeneratorContext)
 
   return (
     <div
@@ -17,7 +15,7 @@ export default function QrCode({}: Props) {
       <img
         src={generatedQrCode}
         alt="Password QR Code"
-        className="w-44 h-44 ym-hide-content"
+        className="ym-hide-content h-44 w-44"
       />
     </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useContext } from 'react'
 
 import { GeneratorContext } from 'lib/context/generatorContext'
 import IconEdit from 'public/icons/edit.svg'
@@ -7,11 +7,8 @@ import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
 import EditSymbolsModal from 'components/EditSymbolsModal'
 
-type Props = {}
-
-export default function PasswordOptions({}: Props) {
-  const [editSymbolsModalOpened, setEditSymbolsModalOpened] =
-    React.useState(false)
+export default function PasswordOptions() {
+  const [editSymbolsModalOpened, setEditSymbolsModalOpened] = useState(false)
   const {
     charsetLowercaseOption,
     charsetUppercaseOption,
@@ -23,11 +20,11 @@ export default function PasswordOptions({}: Props) {
     setCharsetNumbersOption,
     setCharsetSymbolsOption,
     setCharsetEasyToReadOption,
-  } = React.useContext(GeneratorContext)
+  } = useContext(GeneratorContext)
 
   return (
     <div className="flex flex-wrap justify-center">
-      <div className="flex justify-center w-full sm:justify-end sm:mr-8 sm:flex-1">
+      <div className="flex w-full justify-center sm:mr-8 sm:flex-1 sm:justify-end">
         <div className="flex flex-col">
           <Checkbox
             label="Lowercase"
@@ -67,7 +64,7 @@ export default function PasswordOptions({}: Props) {
             }}
             className="my-2"
           >
-            <IconEdit className="inline h-4 mr-2" />
+            <IconEdit className="mr-2 inline h-4" />
             edit symbols
             <EditSymbolsModal
               opened={editSymbolsModalOpened}
@@ -76,8 +73,8 @@ export default function PasswordOptions({}: Props) {
           </Button>
         </div>
       </div>
-      <div className="w-0.5 bg-neutral-200 hidden sm:flex"></div>
-      <div className="flex justify-center sm:justify-start sm:flex-1 sm:ml-8">
+      <div className="hidden w-0.5 bg-neutral-200 sm:flex"></div>
+      <div className="flex justify-center sm:ml-8 sm:flex-1 sm:justify-start">
         <div className="flex flex-col">
           <div className="inline-flex items-center">
             <Checkbox
@@ -88,9 +85,9 @@ export default function PasswordOptions({}: Props) {
               }}
               className="my-2"
             />
-            <button className="relative inline p-1 ml-1 duration-200 rounded-full group focus:outline-primary">
-              <IconInfo className="h-5 duration-200 fill-neutral-400 hover:fill-primary/75" />
-              <div className="absolute flex items-center opacity-0 justify-center invisible p-3 mt-1 duration-200 bg-white border rounded shadow w-48 right-[-50%] translate-x-[25%] top-full text-sm group-hover:visible group-hover:opacity-100">
+            <button className="group relative ml-1 inline rounded-full p-1 duration-200 focus:outline-primary">
+              <IconInfo className="h-5 fill-neutral-400 duration-200 hover:fill-primary/75" />
+              <div className="invisible absolute right-[-50%] top-full mt-1 flex w-48 translate-x-[25%] items-center justify-center rounded border bg-white p-3 text-sm opacity-0 shadow duration-200 group-hover:visible group-hover:opacity-100">
                 Avoid ambiguous characters (o, O, 0, 1, l, I)
               </div>
             </button>

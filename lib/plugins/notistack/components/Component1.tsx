@@ -11,7 +11,7 @@ const Component1 = React.forwardRef<
   return (
     <div
       ref={ref}
-      className="px-5 py-3 bg-white/90 flex backdrop-blur shadow-md border-2 border-primary justify-start rounded-md min-w-[200px] text-neutral-700"
+      className="flex min-w-[200px] justify-start rounded-md border-2 border-primary bg-white/90 px-5 py-3 text-neutral-700 shadow-md backdrop-blur"
     >
       {message}
     </div>

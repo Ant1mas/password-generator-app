@@ -1,10 +1,6 @@
-import React from 'react'
-
-type Props = {}
-
-export default function Footer({}: Props) {
+export default function Footer() {
   return (
-    <footer className="flex justify-center my-8">
+    <footer className="my-8 flex justify-center">
       <div className="text-sm font-light uppercase text-neutral-500">
         Created by&nbsp;
         <a

@@ -1,4 +1,3 @@
-import React from 'react'
 import { SnackbarProvider } from 'notistack'
 
 import Component1 from 'lib/plugins/notistack/components/Component1'

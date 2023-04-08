@@ -1,4 +1,4 @@
-export const copyToClipboard = (string: string): void => {
+export default function copyToClipboard(string: string): void {
   const el = document.createElement('textarea')
   el.value = string
   el.setAttribute('readonly', '')
@@ -9,5 +9,3 @@ export const copyToClipboard = (string: string): void => {
   document.execCommand('copy')
   document.body.removeChild(el)
 }
-
-export default copyToClipboard
