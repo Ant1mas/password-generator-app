@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { useGeneratorContext } from '@/lib/context/GeneratorContext'
+import { useGeneratorContext } from 'lib/context/generatorContext'
 import { useAcceptableSymbols } from 'lib/hooks/useAcceptableSymbols'
 import Modal from 'components/Modal'
 import Checkbox from 'components/Checkbox'

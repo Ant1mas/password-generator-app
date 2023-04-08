@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { useGeneratorContext } from '@/lib/context/GeneratorContext'
+import { useGeneratorContext } from 'lib/context/generatorContext'
 import IconEdit from 'public/icons/edit.svg'
 import IconInfo from 'public/icons/info.svg'
 import Button from 'components/Button'
