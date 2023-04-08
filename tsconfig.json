@@ -15,8 +15,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "components/*": ["./src/components/*"],
-      "lib/*": ["./src/lib/*"],
+      "@/*": ["./*"],
+      "components/*": ["./components/*"],
+      "lib/*": ["./lib/*"],
       "public/*": ["./public/*"]
     },
     "incremental": true,
