@@ -3,7 +3,7 @@ const withPWA = require("next-pwa")
 const pwaCaching = require("./pwa-caching")
 
 module.exports = {
-  basePath: '/pwd',
+  basePath: '',
   output: 'standalone',
   // pwa: {
   //   dest: "public",
