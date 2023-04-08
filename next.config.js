@@ -4,6 +4,8 @@ const pwaCaching = require("./pwa-caching")
 
 module.exports = {
   basePath: '',
+  reactStrictMode: true,
+  swcMinify: true,
   output: 'standalone',
   // pwa: {
   //   dest: "public",
