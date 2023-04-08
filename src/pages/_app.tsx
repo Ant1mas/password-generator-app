@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module'
 
-import '../../i18n'
 import 'src/styles/globals.css'
 import CustomSnackbarProvider from 'lib/plugins/notistack/CustomSnackbarProvider'
 
