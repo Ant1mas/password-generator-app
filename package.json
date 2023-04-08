@@ -2,7 +2,7 @@
   "name": "password-generator-app",
   "version": "1.0.3",
   "description": "",
-  "author": "Anton Moskovskiy (https://github.com/Ant1mas)",
+  "author": "Anton Moskovskii <ant1mas.dev@gmail.com> (https://github.com/Ant1mas)",
   "private": true,
   "license": "MIT",
   "scripts": {
