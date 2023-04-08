@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import Head from 'next/head'
 import { AppProps } from 'next/app'
+import clsx from 'clsx'
 import TagManager from 'react-gtm-module'
 
-import 'styles/globals.css'
+import '@/styles/globals.css'
+import { roboto } from 'lib/config/fonts'
 import CustomSnackbarProvider from 'lib/plugins/notistack/CustomSnackbarProvider'
 
 export function App(props: AppProps) {
@@ -14,14 +15,11 @@ export function App(props: AppProps) {
   }, [])
 
   return (
-    <>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
+    <div id="app" className={clsx([roboto.variable])}>
       <CustomSnackbarProvider>
         <Component {...pageProps} />
       </CustomSnackbarProvider>
-    </>
+    </div>
   )
 }
 

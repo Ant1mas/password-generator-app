@@ -1,19 +1,13 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import clsx from 'clsx'
 
-import DocumentFavicon from 'components/DocumentFavicon'
+import { roboto } from 'lib/config/fonts'
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
-        <Head>
-          <DocumentFavicon />
-          <meta name="theme-color" content="#fff" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap"
-          />
-        </Head>
+      <Html lang="en" className={clsx([roboto.variable])}>
+        <Head />
         <body>
           <Main />
           <NextScript />
